@@ -4,24 +4,22 @@
   <meta charset="UTF-8">
   <title>Vente de Sujets</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #ece9e6, #ffffff);
-      padding: 20px;
-      text-align: center;
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      width: 100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
     }
 
     .container {
+      width: 90%; /* ou 100% si tu veux tout prendre */
+      max-width: 600px; /* facultatif pour éviter que ce soit trop large sur PC */
+      margin: 40px auto;
       background: white;
       padding: 30px;
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      max-width: 400px;
-      margin: auto;
     }
 
     select, input, button {
@@ -56,7 +54,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>Acheter un sujet TYPE chez Steeve</h2>
+    <h2>Acheter un sujet TYPE</h2>
 
     <label for="niveau">Choisissez le niveau :</label>
     <select id="niveau">
