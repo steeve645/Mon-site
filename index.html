@@ -1,10 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bienvenue</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Avancé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #0056b3;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Mon premier site hébergé !</h1>
+
+    <header>
+        <h1>Bienvenue sur mon site avancé</h1>
+    </header>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="accueil">
+            <h2>Accueil</h2>
+            <p>Ce site est un exemple de page web moderne avec du HTML et du CSS intégré.</p>
+        </section>
+
+        <section id="apropos">
+            <h2>À propos</h2>
+            <p>Je suis un(e) passionné(e) de développement web. Ce site me permet de partager mes projets.</p>
+        </section>
+
+        <section id="projets">
+            <h2>Projets</h2>
+            <ul>
+                <li>Site vitrine pour une entreprise locale</li>
+                <li>Blog personnel</li>
+                <li>Application météo simple</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Tu peux me contacter via : <a href="mailto:exemple@email.com">exemple@email.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 MonSite. Tous droits réservés.
+    </footer>
+
 </body>
 </html>
