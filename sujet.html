@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vente de Sujets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      max-width: 400px;
+      margin: auto;
+    }
+
+    select, input, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .success {
+      margin-top: 20px;
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Acheter un sujet TYPE</h2>
+
+    <label for="niveau">Choisissez le niveau :</label>
+    <select id="niveau">
+      <option value="cepe">CEPE</option>
+      <option value="bepc">BEPC</option>
+      <option value="bacc">BACC</option>
+    </select>
+
+    <label for="numero">Numéro de paiement (10 chiffres) :</label>
+    <input type="text" id="numero" placeholder="Ex: 0321234567" maxlength="10" />
+
+    <button onclick="validerPaiement()">Acheter</button>
+
+    <div id="resultat"></div>
+  </div>
+
+  <script>
+    function validerPaiement() {
+      const niveau = document.getElementById('niveau').value;
+      const numero = document.getElementById('numero').value;
+      const res = document.getElementById('resultat');
+
+      if (!/^\d{10}$/.test(numero)) {
+        res.innerHTML = "<p class='error'>Numéro invalide. Il doit contenir exactement 10 chiffres.</p>";
+        return;
+      }
+
+      let lien = '';
+      if (niveau === 'cepe') {
+        lien = 'https://exemple.com/sujets/cepe.pdf';
+      } else if (niveau === 'bepc') {
+        lien = 'https://exemple.com/sujets/bepc.pdf';
+      } else if (niveau === 'bacc') {
+        lien = 'https://exemple.com/sujets/bacc.pdf';
+      }
+
+      res.innerHTML = `<p class="success">Paiement validé !<br>
+        Voici ton lien de téléchargement :<br>
+        <a href="${lien}" target="_blank">Télécharger le sujet ${niveau.toUpperCase()}</a>
+      </p>`;
+    }
+  </script>
+</body>
+</html>
